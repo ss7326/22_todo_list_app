@@ -3,6 +3,7 @@
 - [ ] Chapter 01
   - 入門 01 - [イントロダクションと環境構築]
     - [ ] Laravel の Vite を Mix に戻す
+      - [x] Laravel から Vite を削除する
 - [ ] Chapter 02
   - 入門 02 - [ToDo アプリケーションの設計]
 - [ ] Chapter 03
