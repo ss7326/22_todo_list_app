@@ -1,8 +1,8 @@
 # chapter
 
-- [ ] Chapter 01
+- [x] Chapter 01
   - 入門 01 - [イントロダクションと環境構築]
-    - [ ] Laravel の Vite を Mix に戻す
+    - [x] Laravel の Vite を Mix に戻す
       - [x] Laravel から Vite を削除する
       - [x] Laravel に Laravel Mix を導入する
 - [ ] Chapter 02
