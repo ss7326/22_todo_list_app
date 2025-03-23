@@ -6,7 +6,30 @@
       - [x] Laravel から Vite を削除する
       - [x] Laravel に Laravel Mix を導入する
 - [ ] Chapter 02
+
   - 入門 02 - [ToDo アプリケーションの設計]
+
+    - url
+      - /folders
+      - /folders/{folder id}
+      - /folders/{folder id}/tasks
+
+    | URL                                             | メソッド | 処理                         |
+    | :---------------------------------------------- | :------- | :--------------------------- |
+    | /folders/{フォルダ ID}/tasks                    | GET      | タスク一覧ページを表示する   |
+    | /folders/create                                 | GET      | フォルダ作成ページを表示する |
+    | /folders/create                                 | POST     | フォルダ作成処理を実行する   |
+    | /folders/{id}/edit                              | GET      | フォルダ編集ページを表示する |
+    | /folders/{id}/edit                              | POST     | フォルダ編集処理を実行する   |
+    | /folders/{id}/delete                            | GET      | フォルダ削除ページを表示する |
+    | /folders/{id}/delete                            | POST     | フォルダ削除処理を実行する   |
+    | /folders/{フォルダ ID}/tasks/create             | GET      | タスク作成ページを表示する   |
+    | /folders/{フォルダ ID}/tasks/create             | POST     | タスク作成処理を実行する     |
+    | /folders/{フォルダ ID}/tasks/{タスク ID}/edit   | GET      | タスク編集ページを表示する   |
+    | /folders/{フォルダ ID}/tasks/{タスク ID}/edit   | POST     | タスク編集処理を実行する     |
+    | /folders/{フォルダ ID}/tasks/{タスク ID}/delete | GET      | タスク削除ページを表示する   |
+    | /folders/{フォルダ ID}/tasks/{タスク ID}/delete | POST     | タスク削除処理を実行する     |
+
 - [ ] Chapter 03
   - 入門 03 - [ToDo アプリのフォルダ一覧表示機能を作る]
 - [ ] Chapter 04
