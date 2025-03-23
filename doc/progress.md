@@ -5,7 +5,7 @@
     - [x] Laravel の Vite を Mix に戻す
       - [x] Laravel から Vite を削除する
       - [x] Laravel に Laravel Mix を導入する
-- [ ] Chapter 02
+- [x] Chapter 02
 
   - 入門 02 - [ToDo アプリケーションの設計]
 
@@ -29,6 +29,31 @@
     | /folders/{フォルダ ID}/tasks/{タスク ID}/edit   | POST     | タスク編集処理を実行する     |
     | /folders/{フォルダ ID}/tasks/{タスク ID}/delete | GET      | タスク削除ページを表示する   |
     | /folders/{フォルダ ID}/tasks/{タスク ID}/delete | POST     | タスク削除処理を実行する     |
+
+    - table
+
+      - folder
+
+      | カラム論理名 | カラム物理名 | 型          | 型の意味            |
+      | :----------- | :----------- | ----------- | ------------------- |
+      | ID           | id           | INTEGER     | 連番（自動採番）    |
+      | タイトル     | title        | VARCHAR(20) | 20 文字までの文字列 |
+      | 作成日       | created_at   | TIMESTAMP   | 日付と時刻          |
+      | 更新日       | updated_at   | TIMESTAMP   | 日付と時刻          |
+
+      - task
+
+      | カラム論理名 | カラム物理名 | 型           | 型の意味   |
+      | :----------- | :----------- | ------------ | ---------- |
+      | ID           | id           | INTEGER      | 連番       |
+      | フォルダ ID  | folder_id    | INTEGER      | 整数       |
+      | タイトル     | title        | VARCHAR(100) | 文字列     |
+      | 状態         | status       | INTEGER      | 数値       |
+      | 期限日       | due_date     | DATE         | 日付       |
+      | 作成日       | created_at   | TIMESTAMP    | 日付と時刻 |
+      | 更新日       | updated_at   | TIMESTAMP    | 日付と時刻 |
+
+      - relation
 
 - [ ] Chapter 03
   - 入門 03 - [ToDo アプリのフォルダ一覧表示機能を作る]
