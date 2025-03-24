@@ -57,6 +57,8 @@
 
 - [ ] Chapter 03
   - 入門 03 - [ToDo アプリのフォルダ一覧表示機能を作る]
+  * [x] controller class
+  * [ ] maigration and model class
 - [ ] Chapter 04
   - 入門 04 - [ToDo アプリのタスク一覧表示機能を作る]
 - [ ] Chapter 05
