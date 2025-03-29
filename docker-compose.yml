@@ -49,6 +49,7 @@ services:
       - PMA_HOST=db # ホスト設定：dbを指定
       - PMA_USER=admin # 初期ユーザー設定：adminを指定
       - PMA_PASSWORD=secret # 初期PW設定：secretを指定
+      - PHP_SESSION_SAVE_PATH=/tmp/sessions
     # db（サービス名）とのリンクを設定する
     links:
       - db
@@ -57,7 +58,8 @@ services:
       - 8080:80
     # ボリュームを設定する（ホスト側ディレクトリ:コンテナ側ボリュームの場所）
     volumes:
-      - ./phpmyadmin/sessions:/sessions
+      # - ./phpmyadmin/sessions:/sessions
+      - ./phpmyadmin/sessions:/tmp/sessions
 
   node:
     image: node:14.18-alpine
