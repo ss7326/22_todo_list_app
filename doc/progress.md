@@ -59,7 +59,9 @@
   - 入門 03 - [ToDo アプリのフォルダ一覧表示機能を作る]
   * [x] controller class
   * [x] maigration and model class
-  * [ ] insert test data
+  * [x] insert test data
+    - $ composer dump-autoload
+  * [ ] controller
 - [ ] Chapter 04
   - 入門 04 - [ToDo アプリのタスク一覧表示機能を作る]
 - [ ] Chapter 05
