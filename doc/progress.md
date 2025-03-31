@@ -63,7 +63,7 @@
     - $ composer dump-autoload
   * [x] controller
   * [x] create template
-  * [ ] folder name to selection list
+  * [x] folder name to selection list
 - [ ] Chapter 04
   - 入門 04 - [ToDo アプリのタスク一覧表示機能を作る]
 - [ ] Chapter 05

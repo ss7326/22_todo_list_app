@@ -14,12 +14,13 @@ class TaskController extends Controller
      *  @param int $id
      *  @return \Illuminate\View\View
      */
-    public function index()
+    public function index(int $id)
     {
         $folders = Folder::all();
 
         return view('tasks/index', [
             'folders' => $folders,
+            "folder_id" => $id
         ]);
     }
 }
