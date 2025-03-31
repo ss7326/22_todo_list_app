@@ -55,7 +55,7 @@
 
       - relation
 
-- [ ] Chapter 03
+- [x] Chapter 03
   - 入門 03 - [ToDo アプリのフォルダ一覧表示機能を作る]
   * [x] controller class
   * [x] maigration and model class
