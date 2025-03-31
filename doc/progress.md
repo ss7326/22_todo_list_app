@@ -55,8 +55,15 @@
 
       - relation
 
-- [ ] Chapter 03
+- [x] Chapter 03
   - 入門 03 - [ToDo アプリのフォルダ一覧表示機能を作る]
+  * [x] controller class
+  * [x] maigration and model class
+  * [x] insert test data
+    - $ composer dump-autoload
+  * [x] controller
+  * [x] create template
+  * [x] folder name to selection list
 - [ ] Chapter 04
   - 入門 04 - [ToDo アプリのタスク一覧表示機能を作る]
 - [ ] Chapter 05
