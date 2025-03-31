@@ -66,6 +66,12 @@
   * [x] folder name to selection list
 - [ ] Chapter 04
   - 入門 04 - [ToDo アプリのタスク一覧表示機能を作る]
+  - [ ] maigration and model class
+  - [ ] create test data and check
+  - [ ] fix contoroller
+  - [ ] fix template
+  - [ ] add accesser to task model
+  - [ ] relation of model class
 - [ ] Chapter 05
   - 入門 05 - [ToDo アプリのフォルダ作成機能を作る]
 - [ ] Chapter 06
