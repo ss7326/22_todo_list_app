@@ -70,7 +70,8 @@
     - Migration ファイルの不整合の解消
       - [ref](https://blog-and-destroy.com/28984)
   - [x] create test data and check
-  - [ ] fix contoroller
+  - [x] fix contoroller
+    - tosql()
   - [ ] fix template
   - [ ] add accesser to task model
   - [ ] relation of model class
