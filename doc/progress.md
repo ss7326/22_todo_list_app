@@ -69,7 +69,7 @@
   - [x] maigration and model class
     - Migration ファイルの不整合の解消
       - [ref](https://blog-and-destroy.com/28984)
-  - [ ] create test data and check
+  - [x] create test data and check
   - [ ] fix contoroller
   - [ ] fix template
   - [ ] add accesser to task model
