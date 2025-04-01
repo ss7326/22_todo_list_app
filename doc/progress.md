@@ -66,7 +66,7 @@
   * [x] folder name to selection list
 - [ ] Chapter 04
   - 入門 04 - [ToDo アプリのタスク一覧表示機能を作る]
-  - [ ] maigration and model class
+  - [x] maigration and model class
     - Migration ファイルの不整合の解消
       - [ref](https://blog-and-destroy.com/28984)
   - [ ] create test data and check
