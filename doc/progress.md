@@ -72,8 +72,8 @@
   - [x] create test data and check
   - [x] fix contoroller
     - tosql()
-  - [ ] fix template
-  - [ ] add accesser to task model
+  - [x] fix template
+  - [x] add accesser to task model
   - [ ] relation of model class
 - [ ] Chapter 05
   - 入門 05 - [ToDo アプリのフォルダ作成機能を作る]
