@@ -74,7 +74,7 @@
     - tosql()
   - [x] fix template
   - [x] add accesser to task model
-  - [ ] relation of model class
+  - [x] relation of model class
 - [ ] Chapter 05
   - 入門 05 - [ToDo アプリのフォルダ作成機能を作る]
 - [ ] Chapter 06
