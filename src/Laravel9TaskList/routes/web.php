@@ -14,6 +14,12 @@ use App\Http\Controllers\TaskController;
 |
 */
 
+/* folders new create page */
+
+Route::get('/folders/create', [FolderController::class, "showCreateForm"])->name('folders.create');
+
+Route::post('/folders/create', [FolderController::class, "create"]);
+
 //
 Route::get('/', function () {
     return view('welcome');
