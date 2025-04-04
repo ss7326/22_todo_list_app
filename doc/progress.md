@@ -79,7 +79,7 @@
   - 入門 05 - [ToDo アプリのフォルダ作成機能を作る]
     - [x] routing
     - [x] display form
-    - [ ] create folder, and save
+    - [x] create folder, and save
     - [ ] input validation
 - [ ] Chapter 06
   - 入門 06 - [ToDo アプリのタスク作成機能を作る]
