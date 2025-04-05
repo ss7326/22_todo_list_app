@@ -85,7 +85,7 @@
   - 入門 06 - [ToDo アプリのタスク作成機能を作る]
     - [x] routing
     - [x] display form
-    - [ ] organaize templates with layouts
+    - [x] organaize templates with layouts
     - [ ] create and save task
     - [ ] test due date validating
 - [ ] Chapter 07
