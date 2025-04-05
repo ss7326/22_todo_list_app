@@ -77,6 +77,10 @@
   - [x] relation of model class
 - [ ] Chapter 05
   - 入門 05 - [ToDo アプリのフォルダ作成機能を作る]
+    - [x] routing
+    - [x] display form
+    - [x] create folder, and save
+    - [ ] input validation
 - [ ] Chapter 06
   - 入門 06 - [ToDo アプリのタスク作成機能を作る]
 - [ ] Chapter 07

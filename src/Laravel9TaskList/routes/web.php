@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\FolderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,12 @@ use App\Http\Controllers\TaskController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+/* folders new create page */
+
+Route::get('/folders/create', [FolderController::class, "showCreateForm"])->name('folders.create');
+
+Route::post('/folders/create', [FolderController::class, "create"]);
 
 //
 Route::get('/', function () {
