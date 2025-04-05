@@ -83,6 +83,11 @@
     - [x] input validation
 - [ ] Chapter 06
   - 入門 06 - [ToDo アプリのタスク作成機能を作る]
+    - [x] routing
+    - [x] display form
+    - [ ] organaize templates with layouts
+    - [ ] create and save task
+    - [ ] test due date validating
 - [ ] Chapter 07
   - 入門 07 - [ToDo アプリのフォルダ編集機能を作る]
 - [ ] Chapter 08
