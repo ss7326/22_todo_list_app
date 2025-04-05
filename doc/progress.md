@@ -86,7 +86,7 @@
     - [x] routing
     - [x] display form
     - [x] organaize templates with layouts
-    - [ ] create and save task
+    - [x] create and save task
     - [ ] test due date validating
 - [ ] Chapter 07
   - 入門 07 - [ToDo アプリのフォルダ編集機能を作る]
