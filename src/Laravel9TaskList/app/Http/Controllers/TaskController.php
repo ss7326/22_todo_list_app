@@ -9,6 +9,20 @@ use App\Models\Task;
 class TaskController extends Controller
 {
     /**
+     *  【タスク作成ページの表示機能】
+     *
+     *  GET /folders/{id}/tasks/create
+     *  @param int $id
+     *  @return \Illuminate\View\View
+     */
+    public function showCreateForm(int $id)
+    {
+        return view('tasks/create', [
+            'folder_id' => $id
+        ]);
+    }
+
+    /**
      *  【タスク一覧ページの表示機能】
      *
      *  GET /folders/{id}/tasks
