@@ -7,6 +7,18 @@ use Illuminate\Foundation\Http\FormRequest;
 class CreateFolder extends FormRequest
 {
     /**
+     * リクエストのnameなどの属性名を再定義するメソッド
+     *
+     * @return array<string>
+     */
+    public function attributes()
+    {
+        return [
+            'title' => 'フォルダ名',
+        ];
+    }
+
+    /**
      * Determine if the user is authorized to make this request.
      * リクエストの内容に基づいた権限チェックを行うメソッド
      *
@@ -26,7 +38,7 @@ class CreateFolder extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
+            'title' => 'required|max:20',
         ];
     }
 }
