@@ -1,0 +1,31 @@
+# ./vendor/bin/phpunit ./tests/Feature/TaskTest.php --testdox
+
+Deprecated: PHP Startup: Use of mbstring.internal_encoding is deprecated in Unknown on line 0
+PHPUnit 9.6.22 by Sebastian Bergmann and contributors.
+
+Task (Tests\Feature\Task)
+ ✘ Due date should be date
+   ┐
+   ├ ErrorException: Undefined variable $uses
+   │
+   ╵ /var/www/Laravel9TaskList/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php:272
+   ╵ /var/www/Laravel9TaskList/vendor/laravel/framework/src/Illuminate/Foundation/Testing/TestCase.php:154
+   ╵ /var/www/Laravel9TaskList/vendor/laravel/framework/src/Illuminate/Foundation/Testing/TestCase.php:96
+   ╵ /var/www/Laravel9TaskList/tests/Feature/TaskTest.php:27
+   ┴
+
+ ✘ Due date should not be past
+   ┐
+   ├ ErrorException: Undefined variable $uses
+   │
+   ╵ /var/www/Laravel9TaskList/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php:272
+   ╵ /var/www/Laravel9TaskList/vendor/laravel/framework/src/Illuminate/Foundation/Testing/TestCase.php:154
+   ╵ /var/www/Laravel9TaskList/vendor/laravel/framework/src/Illuminate/Foundation/Testing/TestCase.php:96
+   ╵ /var/www/Laravel9TaskList/tests/Feature/TaskTest.php:27
+   ┴
+
+Time: 00:02.326, Memory: 22.00 MB
+
+
+ERRORS!
+Tests: 2, Assertions: 0, Errors: 2.
