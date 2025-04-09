@@ -91,6 +91,9 @@
       - [ ] [error log](../doc/log/06_create_task/000_test_error_undefined_variable/00.log)
 - [ ] Chapter 07
   - 入門 07 - [ToDo アプリのフォルダ編集機能を作る]
+  - [ ] routing
+  - [ ] display form
+  - [ ] edit and save folder
 - [ ] Chapter 08
   - 入門 08 - [ToDo アプリのタスクの編集機能を作る]
 - [ ] Chapter 09
