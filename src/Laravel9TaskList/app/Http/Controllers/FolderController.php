@@ -9,6 +9,23 @@ use Illuminate\Http\Request;
 class FolderController extends Controller
 {
     /**
+     *  【フォルダ編集ページの表示機能】
+     *
+     *  GET /folders/{id}/edit
+     *  @param int $id
+     *  @return \Illuminate\View\View
+     */
+    public function showEditForm(int $id)
+    {
+        $folder = Folder::find($id);
+
+        return view('folders/edit', [
+            'folder_id' => $folder->id,
+            'folder_title' => $folder->title,
+        ]);
+    }
+
+    /**
      *  【フォルダの作成機能】
      *
      *  POST /folders/create

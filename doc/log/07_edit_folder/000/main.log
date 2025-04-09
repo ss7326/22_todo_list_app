@@ -1,0 +1,4 @@
+Missing required parameter for [Route: folders.edit] [URI: folders/{id}/edit] [Missing parameter: id].
+
+resources / views / folders / edit.blade.php : 28
+require
