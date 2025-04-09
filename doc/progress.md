@@ -88,6 +88,7 @@
     - [x] organaize templates with layouts
     - [x] create and save task
     - [ ] test due date validating
+      - [ ] [error log](../doc/log/06_create_task/000_test_error_undefined_variable/00.log)
 - [ ] Chapter 07
   - 入門 07 - [ToDo アプリのフォルダ編集機能を作る]
 - [ ] Chapter 08
