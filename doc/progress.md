@@ -75,14 +75,20 @@
   - [x] fix template
   - [x] add accesser to task model
   - [x] relation of model class
-- [ ] Chapter 05
+- [x] Chapter 05
   - 入門 05 - [ToDo アプリのフォルダ作成機能を作る]
     - [x] routing
     - [x] display form
     - [x] create folder, and save
-    - [ ] input validation
+    - [x] input validation
 - [ ] Chapter 06
   - 入門 06 - [ToDo アプリのタスク作成機能を作る]
+    - [x] routing
+    - [x] display form
+    - [x] organaize templates with layouts
+    - [x] create and save task
+    - [ ] test due date validating
+      - [ ] [error log](../doc/log/06_create_task/000_test_error_undefined_variable/00.log)
 - [ ] Chapter 07
   - 入門 07 - [ToDo アプリのフォルダ編集機能を作る]
 - [ ] Chapter 08
