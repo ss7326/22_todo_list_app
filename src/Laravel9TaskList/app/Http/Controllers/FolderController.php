@@ -2,12 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EditFolder;
 use App\Http\Requests\CreateFolder;
 use App\Models\Folder;
 use Illuminate\Http\Request;
 
 class FolderController extends Controller
 {
+    /**
+     *  【フォルダの編集機能】
+     *
+     *  POST /folders/{id}/edit
+     *  @param int $id
+     *  @param EditFolder $request
+     *  @return \Illuminate\Http\RedirectResponse
+     */
+    public function edit(int $id, EditFolder $request)
+    {
+        $folder = Folder::find($id);
+
+        $folder->title = $request->title;
+        $folder->save();
+
+        return redirect()->route('tasks.index', [
+            'id' => $folder->id,
+        ]);
+    }
+
     /**
      *  【フォルダ編集ページの表示機能】
      *
