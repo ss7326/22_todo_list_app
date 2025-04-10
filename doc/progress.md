@@ -98,7 +98,7 @@
   - 入門 08 - [ToDo アプリのタスクの編集機能を作る]
     - [x] routing
     - [x] display form
-    - [ ] unitize template
+    - [x] unitize template
     - [ ] edit and save task
     - [ ] test status validation
 - [ ] Chapter 09
