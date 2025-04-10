@@ -15,6 +15,11 @@ use App\Http\Controllers\FolderController;
 |
 */
 
+/* tasks new edit page */
+
+Route::get('/folders/{id}/tasks/{task_id}/edit', [TaskController::class, "showEditForm"])->name('tasks.edit');
+
+Route::post('/folders/{id}/tasks/{task_id}/edit', [TaskController::class, "edit"]);
 
 /* folders new edit page */
 
