@@ -10,6 +10,24 @@ use Illuminate\Http\Request;
 class FolderController extends Controller
 {
     /**
+     *  【フォルダ削除ページの表示機能】
+     *  機能：フォルダIDをフォルダ編集ページに渡して表示する
+     *
+     *  GET /folders/{id}/delete
+     *  @param int $id
+     *  @return \Illuminate\View\View
+     */
+    public function showDeleteForm(int $id)
+    {
+        $folder = Folder::find($id);
+
+        return view('folders/delete', [
+            'folder_id' => $folder->id,
+            'folder_title' => $folder->title,
+        ]);
+    }
+
+    /**
      *  【フォルダの編集機能】
      *
      *  POST /folders/{id}/edit

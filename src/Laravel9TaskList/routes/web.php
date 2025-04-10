@@ -15,6 +15,12 @@ use App\Http\Controllers\FolderController;
 |
 */
 
+/* folders new delete page */
+
+Route::get('/folders/{id}/delete', [FolderController::class, "showDeleteForm"])->name('folders.delete');
+
+Route::post('/folders/{id}/delete', [FolderController::class, "delete"]);
+
 /* tasks new edit page */
 
 Route::get('/folders/{id}/tasks/{task_id}/edit', [TaskController::class, "showEditForm"])->name('tasks.edit');
