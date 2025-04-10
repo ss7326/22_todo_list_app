@@ -99,7 +99,7 @@
     - [x] routing
     - [x] display form
     - [x] unitize template
-    - [ ] edit and save task
+    - [x] edit and save task
     - [ ] test status validation
 - [ ] Chapter 09
   - 入門 09 - [ToDo アプリのフォルダ削除機能を作る]
