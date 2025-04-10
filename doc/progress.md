@@ -101,6 +101,7 @@
     - [x] unitize template
     - [x] edit and save task
     - [ ] test status validation
+      - [ ] [error](#test-due-date-validating)
 - [ ] Chapter 09
   - 入門 09 - [ToDo アプリのフォルダ削除機能を作る]
 - [ ] Chapter 10
