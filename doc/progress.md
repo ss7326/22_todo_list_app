@@ -104,6 +104,9 @@
       - [ ] [error](#test-due-date-validating)
 - [ ] Chapter 09
   - 入門 09 - [ToDo アプリのフォルダ削除機能を作る]
+    - [ ] routing
+    - [ ] display form
+    - [ ] delete folder
 - [ ] Chapter 10
   - 入門 10 - [ToDo アプリのタスク削除機能を作る]
 - [ ] Chapter 11
