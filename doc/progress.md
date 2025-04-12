@@ -109,8 +109,8 @@
     - [x] delete folder
 - [ ] Chapter 10
   - 入門 10 - [ToDo アプリのタスク削除機能を作る]
-  - [ ] routing
-  - [ ] display form
+  - [x] routing
+  - [x] display form
   - [ ] delete task
 - [ ] Chapter 11
   - 入門 11 - [ToDo アプリの認証機能を作る Part1]
