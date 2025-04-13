@@ -114,7 +114,7 @@
   - [x] delete task
 - [ ] Chapter 11
   - 入門 11 - [ToDo アプリの認証機能を作る Part1]
-  - [ ] link user and folder
+  - [x] link user and folder
   - [ ] make home page
   - [ ] register user
   - [ ] login
