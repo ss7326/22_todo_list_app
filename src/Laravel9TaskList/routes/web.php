@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\FolderController;
@@ -53,10 +54,7 @@ Route::get('/folders/create', [FolderController::class, "showCreateForm"])->name
 Route::post('/folders/create', [FolderController::class, "create"]);
 
 //
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [HomeController::class, "index"])->name('home');
 /* index page */
 
 Route::get("/folders/{id}/tasks", [TaskController::class, "index"])->name("tasks.index");
