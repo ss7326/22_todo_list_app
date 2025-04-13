@@ -64,7 +64,7 @@
   * [x] controller
   * [x] create template
   * [x] folder name to selection list
-- [ ] Chapter 04
+- [x] Chapter 04
   - 入門 04 - [ToDo アプリのタスク一覧表示機能を作る]
   - [x] maigration and model class
     - Migration ファイルの不整合の解消
@@ -102,13 +102,16 @@
     - [x] edit and save task
     - [ ] test status validation
       - [ ] [error](#test-due-date-validating)
-- [ ] Chapter 09
+- [x] Chapter 09
   - 入門 09 - [ToDo アプリのフォルダ削除機能を作る]
-    - [ ] routing
-    - [ ] display form
-    - [ ] delete folder
-- [ ] Chapter 10
+    - [x] routing
+    - [x] display form
+    - [x] delete folder
+- [x] Chapter 10
   - 入門 10 - [ToDo アプリのタスク削除機能を作る]
+  - [x] routing
+  - [x] display form
+  - [x] delete task
 - [ ] Chapter 11
   - 入門 11 - [ToDo アプリの認証機能を作る Part1]
 - [ ] Chapter 12
