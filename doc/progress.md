@@ -114,6 +114,13 @@
   - [x] delete task
 - [ ] Chapter 11
   - 入門 11 - [ToDo アプリの認証機能を作る Part1]
+  - [ ] link user and folder
+  - [ ] make home page
+  - [ ] register user
+  - [ ] login
+  - [ ] make login enu on header
+  - [ ] logout
+  - [ ] test auth
 - [ ] Chapter 12
   - 入門 12 - [ToDo アプリの認証機能を作る Part2]
 - [ ] Chapter 13
