@@ -116,7 +116,7 @@
   - 入門 11 - [ToDo アプリの認証機能を作る Part1]
   - [x] link user and folder
   - [x] make home page
-  - [ ] register user
+  - [x] register user
   - [ ] login
   - [ ] make login enu on header
   - [ ] logout
