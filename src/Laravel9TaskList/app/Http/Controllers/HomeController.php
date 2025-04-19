@@ -7,10 +7,19 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     /**
-     *  ホームページを表示するコントローラー
+     * Create a new controller instance.
      *
-     *  GET /
-     *  @return \Illuminate\View\View
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {

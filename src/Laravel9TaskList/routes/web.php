@@ -58,3 +58,7 @@ Route::get('/', [HomeController::class, "index"])->name('home');
 /* index page */
 
 Route::get("/folders/{id}/tasks", [TaskController::class, "index"])->name("tasks.index");
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

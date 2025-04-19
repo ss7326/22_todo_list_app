@@ -26,3 +26,13 @@ composer create-project "laravel/laravel=9.*" Laravel9TaskList
 > php -f install-ja-lang.php
 
 > php -r "unlink('install-ja-lang.php');"
+
+# 11
+
+## laravel/ui
+
+> root~# composer require laravel/ui
+
+# 認証関係のファイルをインストールする(home.blade.php だけ 'No' にする)
+
+> root~# php artisan ui:auth
