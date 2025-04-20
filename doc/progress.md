@@ -117,7 +117,7 @@
   - [x] link user and folder
   - [x] make home page
   - [x] register user
-  - [ ] login
+  - [x] login
   - [ ] make login enu on header
   - [ ] logout
   - [ ] test auth
