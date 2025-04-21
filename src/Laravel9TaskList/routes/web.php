@@ -17,50 +17,54 @@ use App\Http\Controllers\FolderController;
 |
 */
 
-/* tasks new delete page */
+/*
+ * 認証を求めるミドルウェアのルーティング
+ * 機能：ルートグループによる一括適用とミドルウェアによるページ認証
+ * 用途：全てのページに対してページ認証を求める
+ */
 
-Route::get('/folders/{id}/tasks/{task_id}/delete', [TaskController::class, "showDeleteForm"])->name('tasks.delete');
+Route::group(
+    ['middleware' => 'auth'],
+    function () {
 
-Route::post('/folders/{id}/tasks/{task_id}/delete', [TaskController::class, "delete"]);
+        /* home page */
+        Route::get('/', [HomeController::class, "index"])->name('home');
 
+        // index page
+        Route::get("/folders/{id}/tasks", [TaskController::class, "index"])->name("tasks.index");
 
-/* folders new delete page */
+        /* folders new create page */
 
-Route::get('/folders/{id}/delete', [FolderController::class, "showDeleteForm"])->name('folders.delete');
+        Route::get('/folders/create', [FolderController::class, "showCreateForm"])->name('folders.create');
+        Route::post('/folders/create', [FolderController::class, "create"]);
 
-Route::post('/folders/{id}/delete', [FolderController::class, "delete"]);
+        /* folders new edit page */
 
-/* tasks new edit page */
+        Route::get('/folders/{id}/edit', [FolderController::class, "showEditForm"])->name('folders.edit');
+        Route::post('/folders/{id}/edit', [FolderController::class, "edit"]);
 
-Route::get('/folders/{id}/tasks/{task_id}/edit', [TaskController::class, "showEditForm"])->name('tasks.edit');
+        /* folders new delete page */
 
-Route::post('/folders/{id}/tasks/{task_id}/edit', [TaskController::class, "edit"]);
+        Route::get('/folders/{id}/delete', [FolderController::class, "showDeleteForm"])->name('folders.delete');
+        Route::post('/folders/{id}/delete', [FolderController::class, "delete"]);
 
-/* folders new edit page */
+        /* tasks new create page */
 
-Route::get('/folders/{id}/edit', [FolderController::class, "showEditForm"])->name('folders.edit');
+        Route::get('/folders/{id}/tasks/create', [TaskController::class, "showCreateForm"])->name('tasks.create');
+        Route::post('/folders/{id}/tasks/create', [TaskController::class, "create"]);
 
-Route::post('/folders/{id}/edit', [FolderController::class, "edit"]);
+        /* tasks new edit page */
 
-/* tasks new create page */
+        Route::get('/folders/{id}/tasks/{task_id}/edit', [TaskController::class, "showEditForm"])->name('tasks.edit');
+        Route::post('/folders/{id}/tasks/{task_id}/edit', [TaskController::class, "edit"]);
 
-Route::get('/folders/{id}/tasks/create', [TaskController::class, "showCreateForm"])->name('tasks.create');
+        /* tasks new delete page */
 
-Route::post('/folders/{id}/tasks/create', [TaskController::class, "create"]);
+        Route::get('/folders/{id}/tasks/{task_id}/delete', [TaskController::class, "showDeleteForm"])->name('tasks.delete');
+        Route::post('/folders/{id}/tasks/{task_id}/delete', [TaskController::class, "delete"]);
+    }
+);
 
-/* folders new create page */
-
-Route::get('/folders/create', [FolderController::class, "showCreateForm"])->name('folders.create');
-
-Route::post('/folders/create', [FolderController::class, "create"]);
-
-//
-Route::get('/', [HomeController::class, "index"])->name('home');
-/* index page */
-
-Route::get("/folders/{id}/tasks", [TaskController::class, "index"])->name("tasks.index");
-
-Auth::routes();
 
 // certification page (member register, login, logout, reset password etc...)
 Auth::routes();

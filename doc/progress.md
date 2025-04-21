@@ -123,7 +123,7 @@
   - [x] test auth
 - [ ] Chapter 12
   - 入門 12 - [ToDo アプリの認証機能を作る Part2]
-    - [ ] 1. request auth to page
+    - [x] 1. request auth to page
     - [ ] 2. page that can only be viewed before logging in
     - [ ] 3. link folder to user
     - [ ] 4. link task to user and folder
