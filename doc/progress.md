@@ -118,7 +118,7 @@
   - [x] make home page
   - [x] register user
   - [x] login
-  - [ ] make login enu on header
+  - [x] make login menu on header
   - [ ] logout
   - [ ] test auth
 - [ ] Chapter 12
