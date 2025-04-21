@@ -120,7 +120,7 @@
   - [x] login
   - [x] make login menu on header
   - [x] logout
-  - [ ] test auth
+  - [x] test auth
 - [ ] Chapter 12
   - 入門 12 - [ToDo アプリの認証機能を作る Part2]
 - [ ] Chapter 13
