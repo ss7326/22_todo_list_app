@@ -119,7 +119,7 @@
   - [x] register user
   - [x] login
   - [x] make login menu on header
-  - [ ] logout
+  - [x] logout
   - [ ] test auth
 - [ ] Chapter 12
   - 入門 12 - [ToDo アプリの認証機能を作る Part2]

@@ -38,6 +38,22 @@
     <main>
         @yield('content')
     </main>
+    <!--
+    *   ログアウトのクリックイベント
+    *   機能：ログアウトリンクのクリック時に真下のログアウトフォームを送信する
+    *   用途：ログアウトを実施する
+    -->
+    @if(Auth::check())
+    <script>
+        // ログアウトがクリックされたらイベントを実施する
+        document.getElementById('logout').addEventListener('click', function(event) {
+            // 現在のURLにフォームの内容を送信するデフォルトの処理をキャンセルする（イベントを中断するリロードのキャンセル）
+            event.preventDefault();
+            // ログアウトフォームの内容を送信する
+            document.getElementById('logout-form').submit();
+        });
+    </script>
+    @endif
     @yield('scripts')
 </body>
 
