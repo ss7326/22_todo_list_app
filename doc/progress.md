@@ -125,7 +125,7 @@
   - 入門 12 - [ToDo アプリの認証機能を作る Part2]
     - [x] 1. request auth to page
     - [x] 2. page that can only be viewed before logging in
-    - [ ] 3. link folder to user
+    - [x] 3. link folder to user
     - [ ] 4. link task to user and folder
     - [ ] 5. change rediredt dictation by if folder is exixts
     - [ ] 6. insert test data by user auth
