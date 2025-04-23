@@ -20,7 +20,11 @@ class FolderController extends Controller
      */
     public function delete(int $id)
     {
-        $folder = Folder::find($id);
+        /**
+         * @var App\Models\User
+         */
+        $user = Auth::user();
+        $folder = $user->folders()->findOrFail($id);
 
         $folder->tasks()->delete();
         $folder->delete();
@@ -42,7 +46,9 @@ class FolderController extends Controller
      */
     public function showDeleteForm(int $id)
     {
-        $folder = Folder::find($id);
+        /** @var App\Models\User */
+        $user = Auth::user();
+        $folder = $user->folders()->findOrFail($id);
 
         return view('folders/delete', [
             'folder_id' => $folder->id,
