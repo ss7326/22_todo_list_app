@@ -59,7 +59,12 @@ class TaskController extends Controller
      */
     public function edit(int $id, int $task_id, EditTask $request)
     {
-        $task = Task::find($task_id);
+        /** @var App\Models\User **/
+        $user = Auth::user();
+        $folder = $user->folders()->findOrFail($id);
+        $task = $folder->tasks()->findOrFail($task_id);
+        // this code on the site is wrong
+        // $task = $folder->find($task_id);
 
         $task->title = $request->title;
         $task->status = $request->status;
@@ -82,7 +87,13 @@ class TaskController extends Controller
      */
     public function showEditForm(int $id, int $task_id)
     {
-        $task = Task::find($task_id);
+        /** @var App\Models\User **/
+        $user = Auth::user();
+        $folder = $user->folders()->findOrFail($id);
+
+        $task = $folder->tasks()->findOrFail($task_id);
+        // this code on the site is wrong
+        // $task = $folder->find($task_id);
 
         return view('tasks/edit', [
             'task' => $task,
