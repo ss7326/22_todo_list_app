@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\CreateTask;
 use Illuminate\Http\Request;
 use App\Models\Folder;
@@ -98,7 +99,9 @@ class TaskController extends Controller
      */
     public function create(int $id, CreateTask $request)
     {
-        $folder = Folder::find($id);
+        /** @var App\Models\User */
+        $user = Auth::user();
+        $folder = $user->folders()->findOrFail($id);
 
         $task = new Task();
         $task->title = $request->title;
@@ -119,6 +122,10 @@ class TaskController extends Controller
      */
     public function showCreateForm(int $id)
     {
+        /** @var App\Models\User */
+        $user = Auth::user();
+        $folder = $user->folders()->findOrFail($id);
+
         return view('tasks/create', [
             'folder_id' => $id
         ]);
