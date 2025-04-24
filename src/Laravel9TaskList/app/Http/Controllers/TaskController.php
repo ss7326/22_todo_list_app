@@ -21,15 +21,17 @@ class TaskController extends Controller
      */
     public function delete(int $id, int $task_id)
     {
-        $task = Task::find($task_id);
+        /** @var App\Models\User **/
+        $user = Auth::user();
+        $folder = $user->folders()->findOrFail($id);
+        $task = $folder->tasks()->findOrFail($task_id);
 
         $task->delete();
 
         return redirect()->route('tasks.index', [
-            'id' => $id
+            'id' => $task->folder_id
         ]);
     }
-
     /**
      *  【タスク削除ページの表示機能】
      *
@@ -40,10 +42,13 @@ class TaskController extends Controller
      */
     public function showDeleteForm(int $id, int $task_id)
     {
-        $task = Task::find($task_id);
+        /** @var App\Models\User **/
+        $user = Auth::user();
+        $folder = $user->folders()->findOrFail($id);
+        $task = $folder->tasks()->findOrFail($task_id);
 
         return view('tasks/delete', [
-            'task' => $task
+            'task' => $task,
         ]);
     }
 
