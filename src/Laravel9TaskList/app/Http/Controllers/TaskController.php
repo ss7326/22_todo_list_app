@@ -68,7 +68,7 @@ class TaskController extends Controller
         $user = Auth::user();
         $folder = $user->folders()->findOrFail($id);
         $task = $folder->tasks()->findOrFail($task_id);
-        // this code on the site is wrong
+        // Note: The following code is incorrect as it tries to find a task directly from the folder
         // $task = $folder->find($task_id);
 
         $task->title = $request->title;
@@ -97,7 +97,7 @@ class TaskController extends Controller
         $folder = $user->folders()->findOrFail($id);
 
         $task = $folder->tasks()->findOrFail($task_id);
-        // this code on the site is wrong
+        // Note: The following code is incorrect as it tries to find a task directly from the folder
         // $task = $folder->find($task_id);
 
         return view('tasks/edit', [
