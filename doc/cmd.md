@@ -36,3 +36,8 @@ composer create-project "laravel/laravel=9.*" Laravel9TaskList
 # 認証関係のファイルをインストールする(home.blade.php だけ 'No' にする)
 
 > root~# php artisan ui:auth
+
+# 12
+
+- Commands to execute before starting each chapter
+  > php artisan migrate:fresh --seed

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\CreateTask;
 use Illuminate\Http\Request;
 use App\Models\Folder;
@@ -20,15 +21,17 @@ class TaskController extends Controller
      */
     public function delete(int $id, int $task_id)
     {
-        $task = Task::find($task_id);
+        /** @var App\Models\User **/
+        $user = Auth::user();
+        $folder = $user->folders()->findOrFail($id);
+        $task = $folder->tasks()->findOrFail($task_id);
 
         $task->delete();
 
         return redirect()->route('tasks.index', [
-            'id' => $id
+            'id' => $task->folder_id
         ]);
     }
-
     /**
      *  【タスク削除ページの表示機能】
      *
@@ -39,10 +42,13 @@ class TaskController extends Controller
      */
     public function showDeleteForm(int $id, int $task_id)
     {
-        $task = Task::find($task_id);
+        /** @var App\Models\User **/
+        $user = Auth::user();
+        $folder = $user->folders()->findOrFail($id);
+        $task = $folder->tasks()->findOrFail($task_id);
 
         return view('tasks/delete', [
-            'task' => $task
+            'task' => $task,
         ]);
     }
 
@@ -58,7 +64,12 @@ class TaskController extends Controller
      */
     public function edit(int $id, int $task_id, EditTask $request)
     {
-        $task = Task::find($task_id);
+        /** @var App\Models\User **/
+        $user = Auth::user();
+        $folder = $user->folders()->findOrFail($id);
+        $task = $folder->tasks()->findOrFail($task_id);
+        // Note: The following code is incorrect as it tries to find a task directly from the folder
+        // $task = $folder->find($task_id);
 
         $task->title = $request->title;
         $task->status = $request->status;
@@ -81,7 +92,13 @@ class TaskController extends Controller
      */
     public function showEditForm(int $id, int $task_id)
     {
-        $task = Task::find($task_id);
+        /** @var App\Models\User **/
+        $user = Auth::user();
+        $folder = $user->folders()->findOrFail($id);
+
+        $task = $folder->tasks()->findOrFail($task_id);
+        // Note: The following code is incorrect as it tries to find a task directly from the folder
+        // $task = $folder->find($task_id);
 
         return view('tasks/edit', [
             'task' => $task,
@@ -98,7 +115,9 @@ class TaskController extends Controller
      */
     public function create(int $id, CreateTask $request)
     {
-        $folder = Folder::find($id);
+        /** @var App\Models\User */
+        $user = Auth::user();
+        $folder = $user->folders()->findOrFail($id);
 
         $task = new Task();
         $task->title = $request->title;
@@ -119,6 +138,10 @@ class TaskController extends Controller
      */
     public function showCreateForm(int $id)
     {
+        /** @var App\Models\User */
+        $user = Auth::user();
+        $folder = $user->folders()->findOrFail($id);
+
         return view('tasks/create', [
             'folder_id' => $id
         ]);

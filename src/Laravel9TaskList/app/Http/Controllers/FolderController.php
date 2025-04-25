@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\EditFolder;
 use App\Http\Requests\CreateFolder;
 use App\Models\Folder;
@@ -19,7 +20,11 @@ class FolderController extends Controller
      */
     public function delete(int $id)
     {
-        $folder = Folder::find($id);
+        /**
+         * @var App\Models\User
+         */
+        $user = Auth::user();
+        $folder = $user->folders()->findOrFail($id);
 
         $folder->tasks()->delete();
         $folder->delete();
@@ -41,7 +46,9 @@ class FolderController extends Controller
      */
     public function showDeleteForm(int $id)
     {
-        $folder = Folder::find($id);
+        /** @var App\Models\User */
+        $user = Auth::user();
+        $folder = $user->folders()->findOrFail($id);
 
         return view('folders/delete', [
             'folder_id' => $folder->id,
@@ -59,8 +66,11 @@ class FolderController extends Controller
      */
     public function edit(int $id, EditFolder $request)
     {
-        $folder = Folder::find($id);
-
+        /**
+         * @var App\Models\User
+         */
+        $user = Auth::user();
+        $folder = $user->folders()->findOrFail($id);
         $folder->title = $request->title;
         $folder->save();
 
@@ -78,7 +88,11 @@ class FolderController extends Controller
      */
     public function showEditForm(int $id)
     {
-        $folder = Folder::find($id);
+        /**
+         * @var App\Models\User
+         */
+        $user = Auth::user();
+        $folder = $user->folders()->findOrFail($id);
 
         return view('folders/edit', [
             'folder_id' => $folder->id,
@@ -98,7 +112,11 @@ class FolderController extends Controller
     {
         $folder = new Folder();
         $folder->title = $request->title;
-        $folder->save();
+
+        // （ログイン）ユーザーに紐づけて保存する
+        /** @var App\Models\User **/
+        $user = Auth::user();
+        $user->folders()->save($folder);
 
         return redirect()->route('tasks.index', [
             'id' => $folder->id,
@@ -113,6 +131,14 @@ class FolderController extends Controller
      */
     public function showCreateForm()
     {
+        // ログインユーザーに紐づくフォルダだけを取得
+        /** @var App\Models\User **/
+        $user = Auth::user();
+        $user->folders;
+
         return view('folders/create');
+        // ?
+        // chpt.12, ユーザーに紐づけてフォルダを作成する
+        // return view('folders/create', compact('folders'));
     }
 }

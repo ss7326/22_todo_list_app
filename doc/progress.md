@@ -123,6 +123,12 @@
   - [x] test auth
 - [ ] Chapter 12
   - 入門 12 - [ToDo アプリの認証機能を作る Part2]
+    - [x] 1. request auth to page
+    - [x] 2. page that can only be viewed before logging in
+    - [x] 3. link folder to user
+    - [x] 4. link task to user and folder
+    - [x] 5. change rediredt dictation by if folder is exixts
+    - [x] 6. insert test data by user auth
 - [ ] Chapter 13
   - 入門 13 - [ToDo アプリの認証機能を作る Part3]
 - [ ] Chapter 14
