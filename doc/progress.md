@@ -133,7 +133,7 @@
   - 入門 13 - [ToDo アプリの認証機能を作る Part3]
     - [x] 1. reset password
     - [x] 2. config for mail connection
-    - [ ] 3. template
+    - [x] 3. template
     - [ ] 4. controller
     - [ ] 5. translate messages to Japanese
     - [ ] 6. translate meil content to Japanese
