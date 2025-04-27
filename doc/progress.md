@@ -135,7 +135,7 @@
     - [x] 2. config for mail connection
     - [x] 3. template
     - [x] 4. controller
-    - [ ] 5. translate messages to Japanese
+    - [x] 5. translate messages to Japanese
     - [ ] 6. translate meil content to Japanese
     - [ ] 7. description
 - [ ] Chapter 14
