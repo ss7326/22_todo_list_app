@@ -134,7 +134,7 @@
     - [x] 1. reset password
     - [x] 2. config for mail connection
     - [x] 3. template
-    - [ ] 4. controller
+    - [x] 4. controller
     - [ ] 5. translate messages to Japanese
     - [ ] 6. translate meil content to Japanese
     - [ ] 7. description
