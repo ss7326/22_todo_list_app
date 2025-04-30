@@ -150,24 +150,16 @@ class TaskController extends Controller
     /**
      *  【タスク一覧ページの表示機能】
      *
-     *  GET /folders/{id}/tasks
-     *  @param int $id
+     *  GET /folders/{folder}/tasks
+     *  @param Folder $folder
      *  @return \Illuminate\View\View
      */
-    public function index(int $id)
+    public function index(Folder $folder)
     {
-        $folders = Folder::all();
-
-        $folder = Folder::find($id);
-
-        // 指定したフォルダが存在しない場合 if文 を実行する
-        if (is_null($folder)) {
-            /* abort関数で404ステータスを実行する */
-            // abort() : 全ての処理を止めて、指定したエラーページを表示する
-            abort(404);
-        }
+        /** @var App\Models\User **/
+        $user = auth()->user();
+        $folders = $user->folders()->get();
         $tasks = $folder->tasks()->get();
-        // $tasks = Task::where('folder_id', $folder->id)->get();
 
         return view('tasks/index', [
             'folders' => $folders,

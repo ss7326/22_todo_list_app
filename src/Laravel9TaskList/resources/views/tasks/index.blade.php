@@ -38,7 +38,7 @@
                         @if($folder->user_id === Auth::user()->id)
                         <tr>
                             <td>
-                                <a href="{{ route('tasks.index', ['id' => $folder->id]) }}" class="list-group-item {{ $folder_id === $folder->id ? 'active' : '' }}">
+                                <a href="{{ route('tasks.index', ['folder' => $folder->id]) }}" class="list-group-item {{ $folder_id === $folder->id ? 'active' : '' }}">
                                     {{ $folder->title }}
                                 </a>
                             </td>
