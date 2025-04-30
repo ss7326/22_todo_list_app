@@ -138,6 +138,7 @@
     - [x] 5. translate messages to Japanese
     - [ ] 6. translate meil content to Japanese
       - [ ] trouble, mail layout error
+      - [x] change mail content
     - [ ] 7. description
 - [ ] Chapter 14
   - 入門 14 - [ToDo アプリのエラーハンドリングをする Part1]
