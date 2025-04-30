@@ -41,3 +41,15 @@ composer create-project "laravel/laravel=9.*" Laravel9TaskList
 
 - Commands to execute before starting each chapter
   > php artisan migrate:fresh --seed
+
+# 13
+
+# テストメールを送信する
+
+> php artisan tinker
+
+> Mail::raw('test email body', function ($email) { $email->to('hoge@piyo.com')->subject('test email subject'); });
+
+<em>
+(check local mail server, localhost:8025)
+</em>

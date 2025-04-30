@@ -131,6 +131,15 @@
     - [x] 6. insert test data by user auth
 - [ ] Chapter 13
   - 入門 13 - [ToDo アプリの認証機能を作る Part3]
+    - [x] 1. reset password
+    - [x] 2. config for mail connection
+    - [x] 3. template
+    - [x] 4. controller
+    - [x] 5. translate messages to Japanese
+    - [ ] 6. translate meil content to Japanese
+      - [ ] trouble, mail layout error
+      - [x] change mail content
+    - [x] 7. description
 - [ ] Chapter 14
   - 入門 14 - [ToDo アプリのエラーハンドリングをする Part1]
 - [ ] Chapter 15
