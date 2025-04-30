@@ -40,14 +40,12 @@ Route::group(
         Route::post('/folders/create', [FolderController::class, "create"]);
 
         /* folders new edit page */
-
-        Route::get('/folders/{id}/edit', [FolderController::class, "showEditForm"])->name('folders.edit');
-        Route::post('/folders/{id}/edit', [FolderController::class, "edit"]);
+        Route::get('/folders/{folder}/edit', [FolderController::class, "showEditForm"])->name('folders.edit');
+        Route::post('/folders/{folder}/edit', [FolderController::class, "edit"]);
 
         /* folders new delete page */
-
-        Route::get('/folders/{id}/delete', [FolderController::class, "showDeleteForm"])->name('folders.delete');
-        Route::post('/folders/{id}/delete', [FolderController::class, "delete"]);
+        Route::get('/folders/{folder}/delete', [FolderController::class, "showDeleteForm"])->name('folders.delete');
+        Route::post('/folders/{folder}/delete', [FolderController::class, "delete"]);
 
         /* tasks new create page */
 
