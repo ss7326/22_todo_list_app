@@ -160,6 +160,12 @@ class TaskController extends Controller
 
         $folder = Folder::find($id);
 
+        // 指定したフォルダが存在しない場合 if文 を実行する
+        if (is_null($folder)) {
+            /* abort関数で404ステータスを実行する */
+            // abort() : 全ての処理を止めて、指定したエラーページを表示する
+            abort(404);
+        }
         $tasks = $folder->tasks()->get();
         // $tasks = Task::where('folder_id', $folder->id)->get();
 
