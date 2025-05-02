@@ -18,14 +18,16 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * ホームページを表示する
      *
+     * GET /
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
-        /** @var App\Models\User */
+        /** @var App\Models\User **/
         $user = Auth::user();
+
         $folder = $user->folders()->first();
 
         if (is_null($folder)) {
@@ -33,7 +35,7 @@ class HomeController extends Controller
         }
 
         return redirect()->route('tasks.index', [
-            'id' => $folder->id
+            'folder' => $folder->id,
         ]);
     }
 }

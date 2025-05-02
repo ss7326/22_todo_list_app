@@ -142,6 +142,12 @@
     - [x] 7. description
 - [ ] Chapter 14
   - 入門 14 - [ToDo アプリのエラーハンドリングをする Part1]
+    - [x] 1. unexists content, 404 error
+    - [x] 2. route model binding
+      - [x] task list
+      - [x] folder controller
+      - [x] task controller
+      - [x] home controller
 - [ ] Chapter 15
   - 入門 15 - [ToDo アプリのエラーハンドリングをする Part2]
 - [ ] Chapter 16
