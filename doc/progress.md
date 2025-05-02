@@ -146,7 +146,8 @@
     - [ ] 2. route model binding
       - [x] task list
       - [x] folder controller
-      - [ ] task controller
+      - [x] task controller
+      - [ ] home controller
 - [ ] Chapter 15
   - 入門 15 - [ToDo アプリのエラーハンドリングをする Part2]
 - [ ] Chapter 16
