@@ -150,7 +150,7 @@
       - [x] home controller
 - [ ] Chapter 15
   - 入門 15 - [ToDo アプリのエラーハンドリングをする Part2]
-    - [ ] anautholized content, 403 error
+    - [x] anautholized content, 403 error
     - [ ] policy class
 - [ ] Chapter 16
   - 入門 16 - [ToDo アプリのエラーハンドリングをする Part3]
