@@ -30,9 +30,11 @@ Route::group(
         /* home page */
         Route::get('/', [HomeController::class, "index"])->name('home');
 
-        // index page
-        Route::get("/folders/{folder}/tasks", [TaskController::class, "index"])->name("tasks.index");
-        // Route::get("/folders/{id}/tasks", [TaskController::class, "index"])->name("tasks.index");
+        Route::group(['middleware' => 'can:view,folder'], function () {
+            // index page
+            Route::get("/folders/{folder}/tasks", [TaskController::class, "index"])->name("tasks.index");
+            // Route::get("/folders/{id}/tasks", [TaskController::class, "index"])->name("tasks.index");
+        });
 
         /* folders new create page */
 

@@ -152,6 +152,7 @@
   - 入門 15 - [ToDo アプリのエラーハンドリングをする Part2]
     - [x] anautholized content, 403 error
     - [ ] policy class
+      - [ ] research about policy
 - [ ] Chapter 16
   - 入門 16 - [ToDo アプリのエラーハンドリングをする Part3]
 - [ ] Chapter 17
