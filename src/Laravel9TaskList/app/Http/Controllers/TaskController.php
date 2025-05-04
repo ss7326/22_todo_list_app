@@ -21,6 +21,8 @@ class TaskController extends Controller
      */
     public function delete(Folder $folder, Task $task)
     {
+        $this->checkRelation($folder, $task);
+
         /** @var App\Models\User **/
         $user = Auth::user();
         $folder = $user->folders()->findOrFail($folder->id);
@@ -43,6 +45,8 @@ class TaskController extends Controller
      */
     public function showDeleteForm(Folder $folder, Task $task)
     {
+        $this->checkRelation($folder, $task);
+
         /** @var App\Models\User **/
         $user = Auth::user();
         $folder = $user->folders()->findOrFail($folder->id);
@@ -64,10 +68,15 @@ class TaskController extends Controller
      */
     public function edit(Folder $folder, Task $task, EditTask $request)
     {
+        $this->checkRelation($folder, $task);
+
         /** @var App\Models\User **/
         $user = Auth::user();
         $folder = $user->folders()->findOrFail($folder->id);
         $task = $folder->tasks()->findOrFail($task->id);
+
+        // code that occur no relation access error
+        // $task->find($task->id);
 
         $task->title = $request->title;
         $task->status = $request->status;
@@ -89,10 +98,15 @@ class TaskController extends Controller
      */
     public function showEditForm(Folder $folder, Task $task)
     {
+        $this->checkRelation($folder, $task);
+
         /** @var App\Models\User **/
         $user = Auth::user();
         $folder = $user->folders()->findOrFail($folder->id);
         $task = $folder->tasks()->findOrFail($task->id);
+
+        // code that occur no relation access error
+        // $task->find($task->id);
 
         return view('tasks/edit', [
             'task' => $task,
@@ -166,5 +180,12 @@ class TaskController extends Controller
             'folder_id' => $folder->id,
             'tasks' => $tasks
         ]);
+    }
+
+    private function checkRelation(Folder $folder, Task $task)
+    {
+        if ($folder->id !== $task->folder_id) {
+            abort(404);
+        }
     }
 }

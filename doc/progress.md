@@ -154,8 +154,10 @@
     - [ ] policy class
       - [ ] research about policy
       - [x] Apply policy to all route
-- [ ] Chapter 16
+- [x] Chapter 16
   - 入門 16 - [ToDo アプリのエラーハンドリングをする Part3]
+    - [x] not exits the relation
+    - [x] check about the relation for folder and tasks
 - [ ] Chapter 17
   - 入門 17 - [ToDo アプリのエラーハンドリングをする Part4]
 - [ ] Chapter 18
