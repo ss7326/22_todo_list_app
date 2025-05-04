@@ -150,6 +150,12 @@ class TaskController extends Controller
      */
     public function index(Folder $folder)
     {
+        /* 権限がないコンテンツを403エラーで返す */
+        // no needs, policy attached by middleware
+        // if (Auth::user()->id !== $folder->user_id) {
+        //     abort(403);
+        // }
+
         /** @var App\Models\User **/
         $user = auth()->user();
         $folders = $user->folders()->get();
