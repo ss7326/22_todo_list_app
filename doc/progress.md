@@ -160,9 +160,10 @@
     - [x] check about the relation for folder and tasks
 - [ ] Chapter 17
   - 入門 17 - [ToDo アプリのエラーハンドリングをする Part4]
-    - [ ] create error page
-      - [ ] 404
-      - [ ] 403
-      - [ ] 500
+    - [x] create error page
+      - [x] 404
+      - [x] 403
+      - [x] 500
+    - [ ] transaction and try..catch
 - [ ] Chapter 18
 - [ ] 巻末資料 - [参考文献]
