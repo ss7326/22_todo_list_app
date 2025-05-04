@@ -156,6 +156,8 @@
       - [x] Apply policy to all route
 - [ ] Chapter 16
   - 入門 16 - [ToDo アプリのエラーハンドリングをする Part3]
+    - [ ] not exits the relation
+    - [ ] check about the relation for folder and tasks
 - [ ] Chapter 17
   - 入門 17 - [ToDo アプリのエラーハンドリングをする Part4]
 - [ ] Chapter 18
