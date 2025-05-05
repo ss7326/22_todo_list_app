@@ -1,6 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
+use App\Http\Controllers\FolderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,51 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/* tasks new delete page */
+
+Route::get('/folders/{id}/tasks/{task_id}/delete', [TaskController::class, "showDeleteForm"])->name('tasks.delete');
+
+Route::post('/folders/{id}/tasks/{task_id}/delete', [TaskController::class, "delete"]);
+
+
+/* folders new delete page */
+
+Route::get('/folders/{id}/delete', [FolderController::class, "showDeleteForm"])->name('folders.delete');
+
+Route::post('/folders/{id}/delete', [FolderController::class, "delete"]);
+
+/* tasks new edit page */
+
+Route::get('/folders/{id}/tasks/{task_id}/edit', [TaskController::class, "showEditForm"])->name('tasks.edit');
+
+Route::post('/folders/{id}/tasks/{task_id}/edit', [TaskController::class, "edit"]);
+
+/* folders new edit page */
+
+Route::get('/folders/{id}/edit', [FolderController::class, "showEditForm"])->name('folders.edit');
+
+Route::post('/folders/{id}/edit', [FolderController::class, "edit"]);
+
+/* tasks new create page */
+
+Route::get('/folders/{id}/tasks/create', [TaskController::class, "showCreateForm"])->name('tasks.create');
+
+Route::post('/folders/{id}/tasks/create', [TaskController::class, "create"]);
+
+/* folders new create page */
+
+Route::get('/folders/create', [FolderController::class, "showCreateForm"])->name('folders.create');
+
+Route::post('/folders/create', [FolderController::class, "create"]);
+
+//
+Route::get('/', [HomeController::class, "index"])->name('home');
+/* index page */
+
+Route::get("/folders/{id}/tasks", [TaskController::class, "index"])->name("tasks.index");
+
+Auth::routes();
+
+// certification page (member register, login, logout, reset password etc...)
+Auth::routes();
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
