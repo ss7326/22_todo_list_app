@@ -12,39 +12,88 @@ use App\Http\Requests\EditTask;
 class TaskController extends Controller
 {
     /**
-     *  【タスクの削除機能】
+     *  【タスク一覧ページの表示機能】
      *
-     *  POST /folders/{folder}/tasks/{task}/delete
+     *  GET /folders/{folder}/tasks
      *  @param Folder $folder
-     *  @param Task $task
      *  @return \Illuminate\View\View
      */
-    public function delete(Folder $folder, Task $task)
+    public function index(Folder $folder)
     {
-        $this->checkRelation($folder, $task);
+        /* 権限がないコンテンツを403エラーで返す */
+        // no needs, policy attached by middleware
+        // if (Auth::user()->id !== $folder->user_id) {
+        //     abort(403);
+        // }
 
         /** @var App\Models\User **/
-        $user = Auth::user();
-        $folder = $user->folders()->findOrFail($folder->id);
-        $task = $folder->tasks()->findOrFail($task->id);
+        $user = auth()->user();
+        $folders = $user->folders()->get();
+        $tasks = $folder->tasks()->get();
 
-        $task->delete();
-
-        return redirect()->route('tasks.index', [
-            'folder' => $task->folder_id
+        return view('tasks/index', [
+            'folders' => $folders,
+            'folder_id' => $folder->id,
+            'tasks' => $tasks
         ]);
     }
 
     /**
-     *  【タスク削除ページの表示機能】
+     *  【タスク作成ページの表示機能】
      *
-     *  GET /folders/{folder}/tasks/{task}/delete
+     *  GET /folders/{folder}/tasks/create
+     *  @param Folder $folder
+     *  @return \Illuminate\View\View
+     */
+    public function showCreateForm(Folder $folder)
+    {
+        /** @var App\Models\User **/
+        $user = Auth::user();
+        $folder = $user->folders()->findOrFail($folder->id);
+
+        return view('tasks/create', [
+            'folder_id' => $folder->id,
+        ]);
+    }
+
+    /**
+     *  【タスクの作成機能】
+     *
+     *  POST /folders/{folder}/tasks/create
+     *  @param Folder $folder
+     *  @param CreateTask $request
+     *  @return \Illuminate\Http\RedirectResponse
+     *  @var App\Http\Requests\CreateTask
+     */
+    public function create(Folder $folder, CreateTask $request)
+    {
+        /** @var App\Models\User **/
+        $user = Auth::user();
+        $folder = $user->folders()->findOrFail($folder->id);
+
+        $task = new Task();
+        $task->title = $request->title;
+        $task->due_date = $request->due_date;
+        $folder->tasks()->save($task);
+
+        return redirect()->route('tasks.index', [
+            'folder' => $folder->id,
+        ]);
+    }
+
+    /**
+     *  【タスク編集ページの表示機能】
+     *
+     *  GET /folders/{folder}/tasks/{task}/edit
      *  @param Folder $folder
      *  @param Task $task
      *  @return \Illuminate\View\View
      */
-    public function showDeleteForm(Folder $folder, Task $task)
+    public function showEditForm(Folder $folder, Task $task)
     {
+        // code for test
+        // abort(500);
+
         $this->checkRelation($folder, $task);
 
         /** @var App\Models\User **/
@@ -52,7 +101,10 @@ class TaskController extends Controller
         $folder = $user->folders()->findOrFail($folder->id);
         $task = $folder->tasks()->findOrFail($task->id);
 
-        return view('tasks/delete', [
+        // code that occur no relation access error
+        // $task->find($task->id);
+
+        return view('tasks/edit', [
             'task' => $task,
         ]);
     }
@@ -89,18 +141,15 @@ class TaskController extends Controller
     }
 
     /**
-     *  【タスク編集ページの表示機能】
+     *  【タスク削除ページの表示機能】
      *
-     *  GET /folders/{folder}/tasks/{task}/edit
+     *  GET /folders/{folder}/tasks/{task}/deleteL
      *  @param Folder $folder
      *  @param Task $task
      *  @return \Illuminate\View\View
      */
-    public function showEditForm(Folder $folder, Task $task)
+    public function showDeleteForm(Folder $folder, Task $task)
     {
-        // code for test
-        // abort(500);
-
         $this->checkRelation($folder, $task);
 
         /** @var App\Models\User **/
@@ -108,80 +157,32 @@ class TaskController extends Controller
         $folder = $user->folders()->findOrFail($folder->id);
         $task = $folder->tasks()->findOrFail($task->id);
 
-        // code that occur no relation access error
-        // $task->find($task->id);
-
-        return view('tasks/edit', [
+        return view('tasks/delete', [
             'task' => $task,
         ]);
     }
 
     /**
-     *  【タスクの作成機能】
+     *  【タスクの削除機能】
      *
-     *  POST /folders/{folder}/tasks/create
+     *  POST /folders/{folder}/tasks/{task}/delete
      *  @param Folder $folder
-     *  @param CreateTask $request
-     *  @return \Illuminate\Http\RedirectResponse
-     *  @var App\Http\Requests\CreateTask
+     *  @param Task $task
+     *  @return \Illuminate\View\View
      */
-    public function create(Folder $folder, CreateTask $request)
+    public function delete(Folder $folder, Task $task)
     {
+        $this->checkRelation($folder, $task);
+
         /** @var App\Models\User **/
         $user = Auth::user();
         $folder = $user->folders()->findOrFail($folder->id);
+        $task = $folder->tasks()->findOrFail($task->id);
 
-        $task = new Task();
-        $task->title = $request->title;
-        $task->due_date = $request->due_date;
-        $folder->tasks()->save($task);
+        $task->delete();
 
         return redirect()->route('tasks.index', [
-            'folder' => $folder->id,
-        ]);
-    }
-    /**
-     *  【タスク作成ページの表示機能】
-     *
-     *  GET /folders/{folder}/tasks/create
-     *  @param Folder $folder
-     *  @return \Illuminate\View\View
-     */
-    public function showCreateForm(Folder $folder)
-    {
-        /** @var App\Models\User **/
-        $user = Auth::user();
-        $folder = $user->folders()->findOrFail($folder->id);
-
-        return view('tasks/create', [
-            'folder_id' => $folder->id,
-        ]);
-    }
-
-    /**
-     *  【タスク一覧ページの表示機能】
-     *
-     *  GET /folders/{folder}/tasks
-     *  @param Folder $folder
-     *  @return \Illuminate\View\View
-     */
-    public function index(Folder $folder)
-    {
-        /* 権限がないコンテンツを403エラーで返す */
-        // no needs, policy attached by middleware
-        // if (Auth::user()->id !== $folder->user_id) {
-        //     abort(403);
-        // }
-
-        /** @var App\Models\User **/
-        $user = auth()->user();
-        $folders = $user->folders()->get();
-        $tasks = $folder->tasks()->get();
-
-        return view('tasks/index', [
-            'folders' => $folders,
-            'folder_id' => $folder->id,
-            'tasks' => $tasks
+            'folder' => $task->folder_id
         ]);
     }
 
