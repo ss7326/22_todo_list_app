@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
+use App\Http\Controllers\FolderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* folders new create page */
+
+Route::get('/folders/create', [FolderController::class, "showCreateForm"])->name('folders.create');
+
+Route::post('/folders/create', [FolderController::class, "create"]);
+
+//
 Route::get('/', function () {
     return view('welcome');
 });
+
+/* index page */
+
+Route::get("/folders/{id}/tasks", [TaskController::class, "index"])->name("tasks.index");

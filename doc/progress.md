@@ -55,12 +55,32 @@
 
       - relation
 
-- [ ] Chapter 03
+- [x] Chapter 03
   - 入門 03 - [ToDo アプリのフォルダ一覧表示機能を作る]
+  * [x] controller class
+  * [x] maigration and model class
+  * [x] insert test data
+    - $ composer dump-autoload
+  * [x] controller
+  * [x] create template
+  * [x] folder name to selection list
 - [ ] Chapter 04
   - 入門 04 - [ToDo アプリのタスク一覧表示機能を作る]
+  - [x] maigration and model class
+    - Migration ファイルの不整合の解消
+      - [ref](https://blog-and-destroy.com/28984)
+  - [x] create test data and check
+  - [x] fix contoroller
+    - tosql()
+  - [x] fix template
+  - [x] add accesser to task model
+  - [x] relation of model class
 - [ ] Chapter 05
   - 入門 05 - [ToDo アプリのフォルダ作成機能を作る]
+    - [x] routing
+    - [x] display form
+    - [x] create folder, and save
+    - [ ] input validation
 - [ ] Chapter 06
   - 入門 06 - [ToDo アプリのタスク作成機能を作る]
 - [ ] Chapter 07
