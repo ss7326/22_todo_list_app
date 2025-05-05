@@ -5,6 +5,7 @@
     - [x] Laravel の Vite を Mix に戻す
       - [x] Laravel から Vite を削除する
       - [x] Laravel に Laravel Mix を導入する
+
 - [x] Chapter 02
 
   - 入門 02 - [ToDo アプリケーションの設計]
