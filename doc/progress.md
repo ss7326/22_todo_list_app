@@ -158,12 +158,12 @@
   - 入門 16 - [ToDo アプリのエラーハンドリングをする Part3]
     - [x] not exits the relation
     - [x] check about the relation for folder and tasks
-- [ ] Chapter 17
+- [x] Chapter 17
   - 入門 17 - [ToDo アプリのエラーハンドリングをする Part4]
     - [x] create error page
       - [x] 404
       - [x] 403
       - [x] 500
-    - [ ] transaction and try..catch
+    - [x] transaction and try..catch
 - [ ] Chapter 18
 - [ ] 巻末資料 - [参考文献]
