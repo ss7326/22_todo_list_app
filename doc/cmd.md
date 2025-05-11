@@ -7,6 +7,20 @@ docker exec -it php-fpm bash
 composer create-project "laravel/laravel=9.*" Laravel9TaskList
 ```
 
+# general
+
+- into php container
+
+```
+docker exec -it php-fpm bash
+```
+
+- controller class for task
+
+```
+php artisan make:controller TaskController
+```
+
 # 3
 
 ## migration
