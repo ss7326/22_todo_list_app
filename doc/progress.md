@@ -112,7 +112,7 @@
   - [x] routing
   - [x] display form
   - [x] delete task
-- [ ] Chapter 11
+- [x] Chapter 11
   - 入門 11 - [ToDo アプリの認証機能を作る Part1]
   - [x] link user and folder
   - [x] make home page
@@ -121,7 +121,7 @@
   - [x] make login menu on header
   - [x] logout
   - [x] test auth
-- [ ] Chapter 12
+- [x] Chapter 12
   - 入門 12 - [ToDo アプリの認証機能を作る Part2]
     - [x] 1. request auth to page
     - [x] 2. page that can only be viewed before logging in
@@ -140,7 +140,7 @@
       - [ ] trouble, mail layout error
       - [x] change mail content
     - [x] 7. description
-- [ ] Chapter 14
+- [x] Chapter 14
   - 入門 14 - [ToDo アプリのエラーハンドリングをする Part1]
     - [x] 1. unexists content, 404 error
     - [x] 2. route model binding
@@ -148,11 +148,11 @@
       - [x] folder controller
       - [x] task controller
       - [x] home controller
-- [ ] Chapter 15
+- [x] Chapter 15
   - 入門 15 - [ToDo アプリのエラーハンドリングをする Part2]
     - [x] anautholized content, 403 error
-    - [ ] policy class
-      - [ ] research about policy
+    - [x] policy class
+      - [x] research about policy
       - [x] Apply policy to all route
 - [x] Chapter 16
   - 入門 16 - [ToDo アプリのエラーハンドリングをする Part3]
@@ -165,5 +165,5 @@
       - [x] 403
       - [x] 500
     - [x] transaction and try..catch
-- [ ] Chapter 18
+- [x] Chapter 18
 - [ ] 巻末資料 - [参考文献]
