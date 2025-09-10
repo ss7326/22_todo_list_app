@@ -55,20 +55,58 @@
 
       - relation
 
-- [ ] Chapter 03
+- [x] Chapter 03
   - 入門 03 - [ToDo アプリのフォルダ一覧表示機能を作る]
+  * [x] controller class
+  * [x] maigration and model class
+  * [x] insert test data
+    - $ composer dump-autoload
+  * [x] controller
+  * [x] create template
+  * [x] folder name to selection list
 - [ ] Chapter 04
   - 入門 04 - [ToDo アプリのタスク一覧表示機能を作る]
-- [ ] Chapter 05
+  - [x] maigration and model class
+    - Migration ファイルの不整合の解消
+      - [ref](https://blog-and-destroy.com/28984)
+  - [x] create test data and check
+  - [x] fix contoroller
+    - tosql()
+  - [x] fix template
+  - [x] add accesser to task model
+  - [x] relation of model class
+- [x] Chapter 05
   - 入門 05 - [ToDo アプリのフォルダ作成機能を作る]
+    - [x] routing
+    - [x] display form
+    - [x] create folder, and save
+    - [x] input validation
 - [ ] Chapter 06
   - 入門 06 - [ToDo アプリのタスク作成機能を作る]
-- [ ] Chapter 07
+    - [x] routing
+    - [x] display form
+    - [x] organaize templates with layouts
+    - [x] create and save task
+    - [ ] test due date validating
+      - [ ] [error log](../doc/log/06_create_task/000_test_error_undefined_variable/00.log)
+- [x] Chapter 07
   - 入門 07 - [ToDo アプリのフォルダ編集機能を作る]
+  - [x] routing
+  - [x] display form
+  - [x] edit and save folder
 - [ ] Chapter 08
   - 入門 08 - [ToDo アプリのタスクの編集機能を作る]
+    - [x] routing
+    - [x] display form
+    - [x] unitize template
+    - [x] edit and save task
+    - [ ] test status validation
+      - [ ] [error](#test-due-date-validating)
 - [ ] Chapter 09
   - 入門 09 - [ToDo アプリのフォルダ削除機能を作る]
+    - [ ] routing
+    - [ ] display form
+    - [ ] delete folder
 - [ ] Chapter 10
   - 入門 10 - [ToDo アプリのタスク削除機能を作る]
 - [ ] Chapter 11
